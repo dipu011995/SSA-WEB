@@ -53,7 +53,7 @@ public class ApplicationReviewController {
 	
 	@RequestMapping(value = "/appReview")
 	public String displayApplicationReviewForm(HttpServletRequest req,Model model) {
-		
+		System.out.println("ApplicationReviewController.displayApplicationReviewForm()");
 		int educationId = Integer.parseInt(req.getParameter("eduId"));
 		
 		  PassportDetails passportDetails = passportService.getEducationalDetailsById(educationId);
