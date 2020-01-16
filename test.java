@@ -3,4 +3,6 @@ public class Test{
   systrace();
   System.out.println("pankaj");
   System.out.println("dipu");
+   System.out.println("aaftab");
+   System.out.println("ashis");
 }
