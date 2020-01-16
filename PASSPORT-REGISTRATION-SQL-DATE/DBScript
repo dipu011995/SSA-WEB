@@ -1,0 +1,108 @@
+PassportRegistration.java
+--------------------------
+private String fname;
+private String lname;
+private String email
+private Date date;
+private String gender;
+private long adharNo;
+private String[] highestDegree;
+private String[] university;
+private Integer[] passedOutError; 
+
+
+PassportRegistrationEntity.java
+--------------------------------
+private String fname;
+private String lname;
+private String email
+private Date date;
+private String gender;
+private Long adharNo;
+
+EducationDetailsEntity
+-----------------------
+private String[] highestDegree;
+private String[] university;
+private Integer[] passedOutError;
+
+PersonDetailsController
+-----------------------
+public String displayPersonDetailsForm(Model model);
+public String savePersonDetails(@ModelAttribute("preg")PassportRegistration reg,Model model);
+
+
+EducationDetailsController
+--------------------------
+public String displayEducationDetailsForm(Model model);
+public String saveEducationalDetails(@ModelAttribute("preg")PassportRegistration reg,Model model);
+
+ApplicationReviewController.java
+----------------------------------
+public String displayEducationDetailsForm(Model model);
+ApplicationReviewController(@ModelAttribute("preg")PassportRegistration reg,Model model);
+
+PersonDetailsServiceImpl
+-------------------------
+public boolean savePersonDetails(PersonRegistration pr);
+public boolean saveEducationalDetails(PersonRegistration pr);
+
+
+
+
+TABLE
+=========
+DEGREE_MASTER
+-------------
+CREATE TABLE DEGREE_MASTER (DEGREE_ID NUMBER(10) PRIMARY KEY, DEGREE_NAME VARCHAR2(20))
+/
+CREATE TABLE YEARS_MASTER (YEAR_ID NUMBER(10) PRIMARY KEY, YEAR NUMBER(4))
+/
+CREATE TABLE UNIVERSITY_MASTER (UNIV_ID NUMBER(10) PRIMARY KEY, UNIV_NAME VARCHAR2(20))
+/
+
+
+
+INSERT INTO DEGREE_MASTER VALUES(1,'B.TECH')
+/
+INSERT INTO DEGREE_MASTER VALUES(2,'M.TECH')
+/
+INSERT INTO DEGREE_MASTER VALUES(3,'MCA')
+/
+INSERT INTO DEGREE_MASTER VALUES(4,'BCA');
+/
+INSERT INTO DEGREE_MASTER VALUES(5,'BCOM')
+/
+INSERT INTO DEGREE_MASTER VALUES(6,'MCOM')
+/
+
+INSERT INTO YEARS_MASTER VALUES(1,'2014')
+/
+INSERT INTO YEARS_MASTER VALUES(2,'2015')
+/
+INSERT INTO YEARS_MASTER VALUES(3,'2016')
+/
+INSERT INTO YEARS_MASTER VALUES(4,'2017')
+/
+INSERT INTO YEARS_MASTER VALUES(5,'2018')
+/
+INSERT INTO YEARS_MASTER VALUES(6,'2019')
+/
+
+
+INSERT INTO UNIVERSITY_MASTER VALUES(1,'JNTU')
+/
+INSERT INTO UNIVERSITY_MASTER VALUES(2,'BPUT')
+/
+INSERT INTO UNIVERSITY_MASTER VALUES(3,'JNU')
+/
+INSERT INTO UNIVERSITY_MASTER VALUES(4,'IIT')
+/
+INSERT INTO UNIVERSITY_MASTER VALUES(5,'NIT')
+/
+INSERT INTO UNIVERSITY_MASTER VALUES(6,'OSMANIA')
+/
+
+
+
+
